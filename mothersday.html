@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To Mom</title>
+        <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
+        <style>
+            html, body{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                background-color: #4682b4;
+            }
+            *{
+                font-family: 'Reenie Beanie', cursive;
+            }
+
+            h1{
+                font-size: 3em;
+            }
+
+            p{
+                font-size: 2em;
+            }
+
+            #notetomom{
+                position: absolute;
+                top: 10%;
+                left: 10%;
+                right: 10%;
+                background-color: #fafad2;
+                box-shadow: 4px 4px 2px 0px;
+                padding-left: 2em;
+                padding-right: 2em;
+            }
+
+            #typeToggle{
+                background-color: lightblue;
+                border: 2px dotted ghostwhite;
+                border-radius: 8px;
+                display: inline-block;
+                padding: 0.2em;
+                cursor: pointer;
+            }
+            .signoff{
+                text-align: right;
+            }
+        </style>
+        <script type="text/javascript">
+
+            function commaSeparateNumber(num){
+                num = (""+num).split(".")[0];
+                if(num > 3){
+                    var triSets = [];
+                    var i= num.length-1, counter =0;
+                    var triSet = "";
+                    for(i; i>-1; i--){
+                        if(counter===3){
+                            triSets.push(triSet);
+                            triSet = "";
+                            counter = 0;
+                        }
+                        triSet = [num[i], triSet].join("");
+                        counter++
+                    }
+                    triSets.push(triSet);
+                    triSets = triSets.reverse();
+                    return triSets.join(",");
+                }
+                return num;
+            }
+            var precision = 3;
+            var currentType = "years";
+            var birthDateTime = new Date("1988-10-31T01:00:00.000");
+            function drawTime(){
+
+                var time;
+                switch(currentType){
+                    case "milliseconds":
+                        today = new Date();
+                        time = today.getTime() - birthDateTime.getTime();
+                        break;
+                    case "seconds":
+                        today = new Date();
+                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+                        time = elapsedMilliseconds/1000;
+                        time = time.toFixed(precision)
+                        break;
+                    case "minutes":
+                        today = new Date();
+                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+                        elapsedSeconds = elapsedMilliseconds/1000;
+                        time = elapsedSeconds/60;
+                        time = time.toFixed(precision)
+                        break;
+                    case "hours":
+                        today = new Date();
+                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+                        elapsedSeconds = elapsedMilliseconds/1000;
+                        elapsedMinutes = elapsedSeconds/60;
+                        time = elapsedMinutes/60;
+                        time = time.toFixed(precision)
+                        break;
+                    case "days":
+                        today = new Date();
+                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+                        elapsedSeconds = elapsedMilliseconds/1000;
+                        elapsedMinutes = elapsedSeconds/60;
+                        elapsedHours = elapsedMinutes/60;
+                        time = elapsedHours/24;
+                        time = time.toFixed(precision)
+                        break;
+                    case "months":
+                        today = new Date();
+                        elapsedYears = today.getFullYear() - birthDateTime.getFullYear() - 1;
+                        time = (elapsedYears * 12) + today.getMonth() + 1 + (12 - (birthDateTime.getMonth()+1));
+                        break;
+                    case "years":
+                        today = new Date();
+                        elapsedYears = today.getFullYear() - birthDateTime.getFullYear() - 1;
+                        elapsedMonths = (elapsedYears * 12) + today.getMonth() + 1 + (12 - (birthDateTime.getMonth()+1));
+                        time = elapsedMonths/12;
+                        time = time.toFixed(precision);
+                        break;
+                }
+                var timeTag = document.getElementById("time");
+                var timeArray = (""+time).split(".");
+                time = [commaSeparateNumber(time)]
+                if(timeArray.length > 1){
+                    time[1] = ".";
+                    time[2] = timeArray[1];
+                }
+                timeTag.textContent = time.join("");
+                //Normally, we'd want to check whether the time value is plural, but I passed 1 year a long time ago.
+
+            }
+
+            var types =[
+                "milliseconds",
+                "seconds",
+                "minutes",
+                "hours",
+                "days",
+                "months",
+                "years"
+            ];
+            var typeSelector = types.length-1;
+            var typeLength = types.length;
+
+            window.onload = function(){
+                var selector = document.getElementById("typeToggle");
+                selector.onclick = function(){
+                    if(--typeSelector < 0){
+                        typeSelector = typeLength-1;
+                    }
+                    currentType = types[typeSelector];
+                    document.getElementById("timeType").textContent = currentType;
+
+                };
+                var interval = setInterval(drawTime, 60);
+            };
+
+        </script>
+    </head>
+    <body>
+        <div id="notetomom">
+            <h1>Hey Mom!</h1>
+            <p>I owe <a id="typeToggle" title="or..."><span id="time"></span> <span id="timeType">years</span></a> of life to you.
+            <p>Thank you for always being there for me.</p>
+            <p class="signoff">Happy Mother's day!</p>
+            <p class="signoff">Love, Robby</p>
+        </div>
+    </body>
+</html>
