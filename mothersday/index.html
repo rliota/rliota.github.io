@@ -1,51 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>To Mom</title>
-        <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-        <style>
-            html, body{
-                margin: 0;
-                padding: 0;
-                border: 0;
-                background-color: #4682b4;
-            }
-            *{
-                font-family: 'Reenie Beanie', cursive;
-            }
-
-            h1{
-                font-size: 3em;
-            }
-
-            p{
-                font-size: 2em;
-            }
-
-            #notetomom{
-                position: absolute;
-                top: 10%;
-                left: 10%;
-                right: 10%;
-                background-color: #fafad2;
-                box-shadow: 4px 4px 2px 0px;
-                padding-left: 2em;
-                padding-right: 2em;
-            }
-
-            #typeToggle{
-                background-color: lightblue;
-                border: 2px dotted ghostwhite;
-                border-radius: 8px;
-                display: inline-block;
-                padding: 0.2em;
-                cursor: pointer;
-                box-shadow: 1px 1px 2px 0px;
-            }
-            .signoff{
-                text-align: right;
-            }
-        </style>
+        <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'/>
+        <link type="text/css" rel="stylesheet" href="mothersday.css"/>
         <script type="text/javascript">
 
             function commaSeparateNumber(num){
@@ -71,7 +30,7 @@
             }
             var precision = 3;
             var currentType = "years";
-            var birthDateTime = new Date("1988-10-31T01:00:00.000");
+            var birthDateTime = new Date(Date.parse("1988-10-31T01:00:00.000-05:00"));
             function drawTime(){
 
                 var time;

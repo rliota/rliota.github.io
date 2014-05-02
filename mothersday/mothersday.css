@@ -1,0 +1,42 @@
+
+html, body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #4682b4;
+}
+*{
+    font-family: 'Reenie Beanie', cursive;
+}
+
+h1{
+    font-size: 3em;
+}
+
+p{
+    font-size: 2em;
+}
+
+#notetomom{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    background-color: #fafad2;
+    box-shadow: 4px 4px 2px 0px;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#typeToggle{
+    background-color: lightblue;
+    border: 2px dotted ghostwhite;
+    border-radius: 8px;
+    display: inline-block;
+    padding: 0.2em;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px 0px;
+}
+.signoff{
+    text-align: right;
+}
