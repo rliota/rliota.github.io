@@ -36,33 +36,33 @@
                 var time;
                 switch(currentType){
                     case "milliseconds":
-                        today = new Date();
-                        time = today.getTime() - birthDateTime.getTime();
+
+                        time = Date.now() - birthDateTime.getTime();
                         break;
                     case "seconds":
-                        today = new Date();
-                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+
+                        elapsedMilliseconds = Date.now() - birthDateTime.getTime();
                         time = elapsedMilliseconds/1000;
                         time = time.toFixed(precision)
                         break;
                     case "minutes":
-                        today = new Date();
-                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+
+                        elapsedMilliseconds = Date.now() - birthDateTime.getTime();
                         elapsedSeconds = elapsedMilliseconds/1000;
                         time = elapsedSeconds/60;
                         time = time.toFixed(precision)
                         break;
                     case "hours":
-                        today = new Date();
-                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+
+                        elapsedMilliseconds = Date.now() - birthDateTime.getTime();
                         elapsedSeconds = elapsedMilliseconds/1000;
                         elapsedMinutes = elapsedSeconds/60;
                         time = elapsedMinutes/60;
                         time = time.toFixed(precision)
                         break;
                     case "days":
-                        today = new Date();
-                        elapsedMilliseconds = today.getTime() - birthDateTime.getTime();
+
+                        elapsedMilliseconds = Date.now() - birthDateTime.getTime();
                         elapsedSeconds = elapsedMilliseconds/1000;
                         elapsedMinutes = elapsedSeconds/60;
                         elapsedHours = elapsedMinutes/60;
