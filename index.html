@@ -112,7 +112,7 @@
                     and also keys into any <code>@import</code> annotations defined there to determine object definition dependencies.
                     If one file's object depends on another file's, simply placing an import annotation
                     in the comments of the dependent file will prompt the compiler to ensure that the required file is
-                    written to the output file before the working one is. (i.e. if main/model/Book.js</code> had the annotation
+                    written to the output file before the working one is. (i.e. if main/model/Book.js had the annotation
                     <code>@import Main.model.Word</code>, main/model/Word.js would be pulled in before Book.js.)
                     </p>
                     <p>JSCompile keeps track of which files it has already traversed,
@@ -122,8 +122,6 @@
                     object like <code>Not.a.namespace.Reader</code> in a file under "util" called "Sunshine.js", and the
                     compiler would not instantiate the mis-matched namespace.
                     </p>
-
-                    </pre>
                 </li>
             </ul>
             <!-- fa-github-square -->
