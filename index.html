@@ -56,33 +56,36 @@
                     </p>
                     <p>
                         For example, this directory structure:
-                        <ul class="nobullets">
-                            <li>main/
-                                <ul>
-                                    <li>util/</li>
-                                    <li>
-                                        view/
-                                        <ul class="nobullets">
-                                            <li>Library.js</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        model/
-                                        <ul class="nobullets">
-                                            <li>Book.js</li>
-                                            <li>Word.js</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        controller/
-                                        <ul class="nobullets">
-                                            <li>LibraryManager.js</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
+                    </p>
+                    <ul class="nobullets">
+                        <li>main/
+                            <ul>
+                                <li>util/</li>
+                                <li>
+                                    view/
+                                    <ul class="nobullets">
+                                        <li>Library.js</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    model/
+                                    <ul class="nobullets">
+                                        <li>Book.js</li>
+                                        <li>Word.js</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    controller/
+                                    <ul class="nobullets">
+                                        <li>LibraryManager.js</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>
                         might produce a file that would look something like:
+                    </p>
 
 <pre><code>    function initialize_MyJSResources(){
         Main = {};
@@ -107,7 +110,6 @@
         }
     }
 </code></pre>
-                    </p>
                     <p>After the namespaces are defined, the compiler begins writing out the .js resources starting from
                     the deepest directory and working its way back up to the root. As it does this, it strips out comments
                     and also keys into any <code>@import</code> annotations defined there to determine object definition dependencies.
