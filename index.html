@@ -1,10 +1,139 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Robert Liota - Software & Web Development</title>
-    </head>
-    <body>
-        Hi world!
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title>Robert Liota - Software & Web Development</title>
+    <link type="text/css" rel="stylesheet" href="css/font-awesome-custom.css">
+    <link type="text/css" rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/init.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#about" title="About" class="active"><i class="fa fa-info-circle"> </i></a>
+            </li>
+            <li>
+                <a href="#projects" title="Projects"><i class="fa fa-code"> </i></a>
+            </li>
+            <li>
+                <a href="#resume" title="Resumé"><i class="fa fa-list-ul"></i></a>
+            </li>
+            <li>
+                <a href="mailto:robertliota.public@gmail.com" title="E-Mail"><i class="fa fa-envelope"></i></a>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+        <header>
+            <h1>Robert Liota</h1>
+            <aside>Thrashing to the solid state.</aside>
+        </header>
+        <div id="about" class="active">
+            <h2>About</h2>
+            <p>I'm currently working with <a href="https://www.teachforamerica.org/">Teach for America</a>
+                to help them develop large, responsive, single-page browser applications with robust AJAX
+                functionality as they switch over to a more service-oriented approach to web development.
+            </p>
+            <p>Previously I worked with the Visiting Nurse Service of New York as a junior full-stack web developer where
+                I helped maintain, update, and develop (respectively) legacy and new Java- and Groovy/Grails-based web systems, applying
+                AJAX where appropriate, and optimizing SQL queries for a custom automated clinician assignment system.
+            </p>
+        </div>
+        <div id="projects">
+            <h2>Projects</h2>
+            <ul class="projects">
+                <li>
+                    <h3>
+                        <a href="https://github.com/rliota/JSCompile">
+                            <i class="fa fa-code-fork">&nbsp;</i>JSCompile
+                        </a>
+                    </h3>
+                    <aside>(2014, Java)</aside>
+                    <p>JSCompile is a tool for pulling together multiple related JavaScript files into one single resource
+                    file. It traverses through a given directory path, building namespace
+                    objects based on the sub-directories it finds.
+                    </p>
+                    <p>
+                        For example, this directory structure:
+                        <ul class="nobullets">
+                            <li>main/</li>
+                            <ul>
+                                <li>util/</li>
+                                <li>
+                                    view/
+                                    <ul class="nobullets">
+                                        <li>Library.js</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    model/
+                                    <ul class="nobullets">
+                                        <li>Book.js</li>
+                                        <li>Word.js</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    controller/
+                                    <ul class="nobullets">
+                                        <li>LibraryManager.js</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </ul>
+                        might produce a file that would look something like:
+
+<pre><code>    function initialize_MyJSResources(){
+        Main = {};
+        Main.util = {};
+        Main.view = {};
+        Main.model = {};
+        Main.controller = {};
+        Main.model.Word = function(){
+            ...
+        }
+
+        Main.model.Book = function(){
+            ...
+        }
+
+        Main.view.Library = function(){
+            ...
+        }
+
+        Main.controller.LibraryManager = function(){
+            ...
+        }
+    }
+</code></pre>
+                    </p>
+                    <p>After the namespaces are defined, the compiler begins writing out the .js resources starting from
+                    the deepest directory and working its way back up to the root. As it does this, it strips out comments
+                    and also keys into any <code>@import</code> annotations defined there to determine object definition dependencies.
+                    If one file's object depends on another file's, simply placing an import annotation
+                    in the comments of the dependent file will prompt the compiler to ensure that the required file is
+                    written to the output file before the working one is. (i.e. if main/model/Book.js</code> had the annotation
+                    <code>@import Main.model.Word</code>, main/model/Word.js would be pulled in before Book.js.)
+                    </p>
+                    <p>JSCompile keeps track of which files it has already traversed,
+                    so any <code>@import</code>ed file is guaranteed to only be loaded once. Presently, the compiler does
+                    not parse the javascript within the files however, and has no knowledge of what objects exist within
+                    them, so it cannot resolve/detect incorrect object definitions. This means that you could define an
+                    object like <code>Not.a.namespace.Reader</code> in a file under "util" called "Sunshine.js", and the
+                    compiler would not instantiate the mis-matched namespace.
+                    </p>
+
+                    </pre>
+                </li>
+            </ul>
+            <!-- fa-github-square -->
+        </div>
+        <div id="resume">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        window.onload=initialize
+    </script>
+</body>
 </html>
