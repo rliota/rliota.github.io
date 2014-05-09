@@ -24,7 +24,7 @@ header {
   height: 4em;
   background-color: #f8f3db; }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (orientation: portrait) {
   header {
     left: 1em;
     box-shadow: 2px 0 2px 0;
@@ -51,7 +51,7 @@ a:hover > * {
   padding-left: 6em;
   padding-right: 1em; }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (orientation: portrait) {
   #content > * {
     padding-left: 1em;
     padding-bottom: 5em; } }
@@ -75,7 +75,7 @@ nav {
   vertical-align: bottom;
   width: 5em; }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (orientation: portrait) {
   nav {
     bottom: 0;
     left: auto;
@@ -91,7 +91,7 @@ nav {
   left: 0;
   top: 0; }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (orientation: portrait) {
   #nav-placeholder {
     position: relative; } }
 nav > ul {
@@ -99,13 +99,13 @@ nav > ul {
   margin: 0;
   padding: 0; }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (orientation: portrait) {
   nav > ul > li {
     display: inline-block; } }
 nav > ul > li {
   text-align: center; }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (orientation: portrait) {
   nav > ul > li {
     padding-right: 0.5em; } }
 nav > ul > li a {
