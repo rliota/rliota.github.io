@@ -36,8 +36,8 @@ function initialize(){
             hash.substring(1),
             "\"]"
         ].join("");
+        navigate(document.querySelector(selector));
     }
-    navigate(document.querySelector(selector));
 
     function expand(control){
         var divToExpandId = control.getAttribute("data-expands");
