@@ -11,37 +11,44 @@
     <nav>
         <ul>
             <li>
-                <a href="#about" title="About" class="active"><i class="fa fa-info-circle"> </i></a>
+                <a href="#about" title="About Me" class="active"><i class="fa fa-info-circle"> </i><span class="nocss">About Me</span></a>
             </li>
             <li>
-                <a href="#projects" title="Projects"><i class="fa fa-code"> </i></a>
+                <a href="#projects" title="Projects">
+                    <i class="fa fa-code"> </i>
+                    <span class="nocss">Projects</span>
+                </a>
             </li>
             <li>
-                <a href="#resume" title="Resumé"><i class="fa fa-list-ul"></i></a>
+                <a href="#resume" title="Resumé">
+                    <i class="fa fa-list-ul"> </i>
+                    <span class="nocss">Resumé</span>
+                </a>
             </li>
             <li>
-                <a href="mailto:robertliota.public@gmail.com" title="E-Mail"><i class="fa fa-envelope"></i></a>
+                <a href="mailto:robertliota.public@gmail.com" title="E-Mail">
+                    <i class="fa fa-envelope"></i>
+                    <span class="nocss">Email Me</span>
+                </a>
             </li>
         </ul>
     </nav>
+    <header>
+        <h1>Robert Liota</h1>
+        <aside>Software & Web Developer</aside>
+    </header>
     <div id="content">
-        <header>
-            <h1>Robert Liota</h1>
-            <aside>Software & Web Developer</aside>
-        </header>
-        <div id="about" class="active">
-            <h2>About</h2>
+        <div id="about">
             <p>I'm currently working with <a href="https://www.teachforamerica.org/">Teach for America</a>
                 to help them develop large, responsive, single-page browser applications with robust AJAX
                 functionality as they switch over to a more service-oriented approach to web development.
             </p>
-            <p>Previously I worked with the Visiting Nurse Service of New York as a junior full-stack web developer where
+            <p>Previously I worked with the <a href="http://www.vnsny.org/">Visiting Nurse Service of New York</a> as a junior full-stack web developer where
                 I helped maintain, update, and develop (respectively) legacy and new Java- and Groovy/Grails-based web systems, applying
                 AJAX where appropriate, and optimizing SQL queries for a custom automated clinician assignment system.
             </p>
         </div>
-        <div id="projects">
-            <h2>Projects</h2>
+        <div id="projects" style="display: none">
             <ul class="projects">
                 <li>
                     <h3>
@@ -50,44 +57,46 @@
                         </a>
                     </h3>
                     <aside>(2014, Java)</aside>
-                    <p>JSCompile is a tool for pulling together multiple related JavaScript files into one single resource
-                    file. It traverses through a given directory path, building namespace
-                    objects based on the sub-directories it finds.
+                    <p>JSCompile is a tool I wrote for pulling together multiple related JavaScript files into one single resource
+                    .js file containing an initialization function. It traverses through a given directory path, outputting namespace
+                    objects based on the sub-directories it finds, and then outputs the contents of .js files it finds.
+                    Utilizes @import annotations in comments for dependency resolution amongst files. <a class="expander" data-expands="jscompile-details">(more...)</a>
                     </p>
-                    <p>
-                        For example, this directory structure:
-                    </p>
-                    <ul class="nobullets">
-                        <li>main/
-                            <ul>
-                                <li>util/</li>
-                                <li>
-                                    view/
-                                    <ul class="nobullets">
-                                        <li>Library.js</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    model/
-                                    <ul class="nobullets">
-                                        <li>Book.js</li>
-                                        <li>Word.js</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    controller/
-                                    <ul class="nobullets">
-                                        <li>LibraryManager.js</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <p>
-                        might produce a file that would look something like:
-                    </p>
+                    <div id="jscompile-details" style="display: none">
+                        <p>
+                            For example, this directory structure:
+                        </p>
+                        <ul class="nobullets">
+                            <li>main/
+                                <ul>
+                                    <li>util/</li>
+                                    <li>
+                                        view/
+                                        <ul class="nobullets">
+                                            <li>Library.js</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        model/
+                                        <ul class="nobullets">
+                                            <li>Book.js</li>
+                                            <li>Word.js</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        controller/
+                                        <ul class="nobullets">
+                                            <li>LibraryManager.js</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>
+                            might produce a file that would look something like:
+                        </p>
 
-<pre><code>    function initialize_MyJSResources(){
+    <pre><code>    function initialize_MyJSResources(){
         Main = {};
         Main.util = {};
         Main.view = {};
@@ -109,27 +118,28 @@
             ...
         }
     }
-</code></pre>
-                    <p>After the namespaces are defined, the compiler begins writing out the .js resources starting from
-                    the deepest directory and working its way back up to the root. As it does this, it strips out comments
-                    and also keys into any <code>@import</code> annotations defined there to determine object definition dependencies.
-                    If one file's object depends on another file's, simply placing an import annotation
-                    in the comments of the dependent file will prompt the compiler to ensure that the required file is
-                    written to the output file before the working one is. (i.e. if main/model/Book.js had the annotation
-                    <code>@import Main.model.Word</code>, main/model/Word.js would be pulled in before Book.js.)
-                    </p>
-                    <p>JSCompile keeps track of which files it has already traversed,
-                    so any <code>@import</code>ed file is guaranteed to only be loaded once. Presently, the compiler does
-                    not parse the javascript within the files however, and has no knowledge of what objects exist within
-                    them, so it cannot resolve/detect incorrect object definitions. This means that you could define an
-                    object like <code>Not.a.namespace.Reader</code> in a file under "util" called "Sunshine.js", and the
-                    compiler would not instantiate the mis-matched namespace.
-                    </p>
+    </code></pre>
+                        <p>After the namespaces are defined, the compiler begins writing out the .js resources starting from
+                            the deepest directory and working its way back up to the root. As it does this, it strips out comments
+                            and also keys into any <code>@import</code> annotations defined there to determine object definition dependencies.
+                            If one file's object depends on another file's, simply placing an import annotation
+                            in the comments of the dependent file will prompt the compiler to ensure that the required file is
+                            written to the output file before the working one is. (i.e. if main/model/Book.js had the annotation
+                            <code>@import Main.model.Word</code>, main/model/Word.js would be pulled in before Book.js.)
+                        </p>
+                        <p>JSCompile keeps track of which files it has already traversed,
+                            so any <code>@import</code>ed file is guaranteed to only be loaded once. Presently, the compiler does
+                            not parse the javascript within the files however, and has no knowledge of what objects exist within
+                            them, so it cannot resolve/detect incorrect object definitions. This means that you could define an
+                            object like <code>Not.a.namespace.Reader</code> in a file under "util" called "Sunshine.js", and the
+                            compiler would not instantiate the mis-matched namespace.
+                        </p>
+                    </div>
                 </li>
             </ul>
             <!-- fa-github-square -->
         </div>
-        <div id="resume">
+        <div id="resume" style="display: none">
 
         </div>
     </div>

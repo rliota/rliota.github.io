@@ -1,76 +1,70 @@
-/**
- * Created by rob on 5/4/14.
- */
 
-function adjustNavPlaceholderForMobile(){
-    var nav = document.getElementsByTagName("nav")[0];
-    document.getElementById("nav-placeholder").style.height = [nav.clientHeight, "px"].join("");
-}
-
-function LayoutManager(){
-    var inchReference = document.createElement('div');
-
-    inchReference.style.width = "1in";
-    inchReference.style.visibility = "hidden";
-    inchReference.style.position = "absolute";
-    if(!getComputedStyle(inchReference, "").width){
-        document.body.appendChild(inchReference)
-
-    }
-
-    this.calculateLayout = function(){
-        var pixelsPerInch = getComputedStyle(inchReference, "").width;
-        pixelsPerInch = pixelsPerInch.substring(0, pixelsPerInch.length-2);
-        this.viewWidth = window.innerWidth / pixelsPerInch;
-        this.viewHeight = window.innerHeight / pixelsPerInch;
-    };
-}
 function initialize(){
-    l = new LayoutManager();
-
-    function doAdjust(){
-        l.calculateLayout();
-
-        var nav = document.getElementsByTagName("nav")[0];
-        var content = document.getElementById("content");
-        if(l.viewWidth < 5.5 || l.viewHeight < 3.2){
-            document.body.className = "smallscreen";
-        //    content.style.setProperty("padding-bottom", getComputedStyle(nav, "").width);
-        //    content.style.setProperty("padding-left", 0);
-
-        }else{
-        //    content.style.setProperty("padding-bottom", 0);
-        //    content.style.setProperty("padding-left", getComputedStyle(nav, "").width);
-            document.body.className = "";
-        }
-
-    }
-    doAdjust();
-
-    window.addEventListener("resize", doAdjust);
-
-    var views = {};
-    views.about = document.getElementById("about");
-    views.projects = document.getElementById("projects");
-    views.resume = document.getElementById("resume");
 
     var nav = document.getElementsByTagName("nav")[0];
     var anchors = nav.getElementsByTagName("a");
 
-    function navigate(clickEvent){
-
+    function navigate(selectedAnchor){
+        selectedAnchor.className = "active";
         var i= 0, iLen=anchors.length;
         for(i; i<iLen; i++){
-            anchors[i].className = "";
+            var displayVal = (selectedAnchor === anchors[i]) ? "" : "none";
+            var classNameToApply = (selectedAnchor === anchors[i]) ? "active" : "";
+            var sectionId = anchors[i].href.split("#");
+            if(sectionId.length > 1){
+                var section = document.getElementById(sectionId[1]);
+                section.style.setProperty("display", displayVal);
+                anchors[i].className = classNameToApply;
+            }
         }
-        clickEvent.currentTarget.className = "active"
+    }
+
+    function onAnchorClick(clickEvent){
+        var selectedAnchor = clickEvent.currentTarget;
+        navigate(selectedAnchor);
     }
 
     var i= 0, iLen=anchors.length;
     for(i; i<iLen; i++){
-        anchors[i].addEventListener("click", navigate)
+        anchors[i].addEventListener("click", onAnchorClick);
     }
 
+    var hash = window.location.hash;
+    if(hash){
+        var selector = [
+            "a[href=\"#",
+            hash.substring(1),
+            "\"]"
+        ].join("");
+    }
+    navigate(document.querySelector(selector));
 
+    function expand(control){
+        var divToExpandId = control.getAttribute("data-expands");
+        document.getElementById(divToExpandId).style.setProperty("display", "");
+        control.textContent = "(less...)";
+    }
+
+    function contract(control){
+        var divToContractId = control.getAttribute("data-expands");
+        console.log(divToContractId)
+        document.getElementById(divToContractId).style.setProperty("display", "none");
+        control.textContent = "(more...)";
+    }
+
+    function onExpanderClick(event){
+        var expander = event.target;
+        if(expander.textContent === "(less...)"){
+            contract(expander)
+        }else{
+            expand(expander);
+        }
+    }
+
+    var expanders = document.getElementsByClassName("expander");
+    var i= 0, iLen=expanders.length;
+    for(i; i<iLen; i++){
+        expanders[i].onclick = onExpanderClick;
+    }
 
 }
