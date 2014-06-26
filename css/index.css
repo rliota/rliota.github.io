@@ -65,6 +65,9 @@ ul.nobullets {
   list-style: none;
   padding-left: 2em; }
 
+.content {
+  max-width: 800px; }
+
 nav {
   position: fixed;
   left: 0;
