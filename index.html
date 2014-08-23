@@ -2,175 +2,63 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="keywords" content="JavaScript,HTML,CSS,JSON,Robert Liota,Liota,Java,Web Developer,Programmer,NYC,New York,New York City">
-    <meta name="robots" content="index,follow">
-    <title>Robert Liota - Software & Web Development</title>
+    <title>Robert Liota</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,700' rel='stylesheet' type='text/css'>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
     <link type="text/css" rel="stylesheet" href="css/font-awesome-custom.css">
-    <link type="text/css" rel="stylesheet" href="css/index.css">
-    <script type="text/javascript" src="js/init.js"></script>
+
 </head>
 <body>
-    <nav>
-        <ul>
-            <li>
-                <a href="#about" title="About Me" class="active"><i class="fa fa-info-circle"> </i><span class="nocss">About Me</span></a>
-            </li>
-            <li>
-                <a href="#projects" title="Projects">
-                    <i class="fa fa-code"> </i>
-                    <span class="nocss">Projects</span>
-                </a>
-            </li>
-            <li>
-                <a href="#resume" title="Resumé">
-                    <i class="fa fa-list-ul"> </i>
-                    <span class="nocss">Resumé</span>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:robertliota.public@gmail.com" title="E-Mail">
-                    <i class="fa fa-envelope"></i>
-                    <span class="nocss">Email Me</span>
-                </a>
+<header>
+    <h1>
+        Robert Liota
+    </h1>
+</header>
+<main>
+    <section id="about">
+        <p>I'm currently working with <a href="https://www.teachforamerica.org/">Teach for America</a>
+            to lead the development of large, yet responsive, beautiful, single-page browser applications with robust AJAX
+            functionality as they switch over to a more service-oriented approach to web development.
+        </p>
+        <p>Previously I worked with the <a href="http://www.vnsny.org/">Visiting Nurse Service of New York</a> as a junior full-stack web developer where
+            I helped maintain, update, and develop (respectively) legacy and new Java- and Groovy/Grails-based web systems, applying
+            AJAX where appropriate, and optimizing SQL queries for a custom automated clinician assignment system.
+        </p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            <li class="project">
+                <h3>
+                    <a href="https://github.com/rliota/JSCompile">
+                        <i class="fa fa-code-fork"></i>JSCompile
+                    </a>
+                </h3>
+                <p>
+                    JSCompile is a tool I wrote in Java to help manage large JavaScript projects, where sane development
+                    practices (object-oriented code, split into separate files) lead to insane namespace management issues.
+                </p>
+                <p>
+                    Originally only designed to support corralling files into namespaces and resolving their dependencies,
+                    the compiler has grown to leverage First-Class functions in javascript to simplify referencing of
+                    name-spaced objects.
+                </p>
+                <p>
+                    Similar to (and inspired by) Java package management, <code>@import</code> statements in comments instruct the compiler
+                    to enclose file contents in a function, and pass the name-space defined objects in as arguments
+                    named after their file name.
+                </p>
             </li>
         </ul>
-    </nav>
-    <header>
-        <h1>Robert Liota</h1>
-        <aside>Software & Web Developer</aside>
-    </header>
-    <div id="content" class="content">
-        <div id="about">
-            <p>I'm currently working with <a href="https://www.teachforamerica.org/">Teach for America</a>
-                to help them develop large, responsive, single-page browser applications with robust AJAX
-                functionality as they switch over to a more service-oriented approach to web development.
-            </p>
-            <p>Previously I worked with the <a href="http://www.vnsny.org/">Visiting Nurse Service of New York</a> as a junior full-stack web developer where
-                I helped maintain, update, and develop (respectively) legacy and new Java- and Groovy/Grails-based web systems, applying
-                AJAX where appropriate, and optimizing SQL queries for a custom automated clinician assignment system.
-            </p>
-        </div>
-        <div id="projects" style="display: none">
-            <ul class="projects">
-                <li>
-                    <h3>
-                        <a href="https://github.com/rliota/Ibid">
-                            <i class="fa fa-code-fork">&nbsp;</i>Ibid
-                        </a>
-                    </h3>
-                    <aside>(2014, Java)</aside>
-                    <p>Ibid is a framework/workflow I'm developing to improve the JavaScript application development livecycle.
-                        Building on concepts pulled from frameworks such as <a href="https://angularjs.org">AngularJS</a> and my experience
-                        with building single page applications, Ibid is an attempt at fully realizing reusability in user interface code.
-                    </p>
-                    <p>
-                        Ideally user interfaces should be compiled before they get to the end user, not as part of the (already bloated)
-                        application "loading" experience. Ibid eschews the mixing of declarative and imperative code (JavaScript in your html) in
-                        favor of automating the process of wiring an html element to a reusable, instantiable, plain ol' JavaScript
-                        function.
-                    </p>
-                    <p>
-                        Ibid view compiler pulls together html and JavaScript using the <a href="http://openjdk.java.net/projects/nashorn/">
-                        Nashorn</a> JavaScript processing library <a href="http://www.oracle.com/technetwork/articles/java/jf14-nashorn-2126515.html">
-                        available in Java 8</a> and the <a href="http://jsoup.org">jsoup</a> library.
-                    </p>
-                </li>
-                <li>
-                    <h3>
-                        <a href="https://github.com/rliota/JSCompile">
-                            <i class="fa fa-code-fork">&nbsp;</i>JSCompile
-                        </a>
-                    </h3>
-                    <aside>(2014, Java)</aside>
-                    <p>JSCompile is a tool I wrote for pulling together multiple related JavaScript files into one single resource
-                    .js file containing an initialization function. It traverses through a given directory path, outputting namespace
-                    objects based on the sub-directories it finds, and then outputs the contents of .js files it finds.
-                    Utilizes @import annotations in comments for dependency resolution amongst files. <a class="expander" data-expands="jscompile-details">(more...)</a>
-                    </p>
-                    <div id="jscompile-details" style="display: none">
-                        <p>
-                            For example, this directory structure:
-                        </p>
-                        <ul class="nobullets">
-                            <li>main/
-                                <ul>
-                                    <li>util/</li>
-                                    <li>
-                                        view/
-                                        <ul class="nobullets">
-                                            <li>Library.js</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        model/
-                                        <ul class="nobullets">
-                                            <li>Book.js</li>
-                                            <li>Word.js</li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        controller/
-                                        <ul class="nobullets">
-                                            <li>LibraryManager.js</li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <p>
-                            might produce a file that would look something like:
-                        </p>
-
-    <pre><code>    function initialize_MyJSResources(){
-        Main = {};
-        Main.util = {};
-        Main.view = {};
-        Main.model = {};
-        Main.controller = {};
-        Main.model.Word = function(){
-            ...
-        }
-
-        Main.model.Book = function(){
-            ...
-        }
-
-        Main.view.Library = function(){
-            ...
-        }
-
-        Main.controller.LibraryManager = function(){
-            ...
-        }
-    }
-    </code></pre>
-                        <p>After the namespaces are defined, the compiler begins writing out the .js resources starting from
-                            the deepest directory and working its way back up to the root. As it does this, it strips out comments
-                            and also keys into any <code>@import</code> annotations defined there to determine object definition dependencies.
-                            If one file's object depends on another file's, simply placing an import annotation
-                            in the comments of the dependent file will prompt the compiler to ensure that the required file is
-                            written to the output file before the working one is. (i.e. if main/model/Book.js had the annotation
-                            <code>@import Main.model.Word</code>, main/model/Word.js would be pulled in before Book.js.)
-                        </p>
-                        <p>JSCompile keeps track of which files it has already traversed,
-                            so any <code>@import</code>ed file is guaranteed to only be loaded once. Presently, the compiler does
-                            not parse the javascript within the files however, and has no knowledge of what objects exist within
-                            them, so it cannot resolve/detect incorrect object definitions. This means that you could define an
-                            object like <code>Not.a.namespace.Reader</code> in a file under "util" called "Sunshine.js", and the
-                            compiler would not instantiate the mis-matched namespace.
-                        </p>
-                    </div>
-                </li>
-            </ul>
-            <!-- fa-github-square -->
-        </div>
-        <div id="resume" style="display: none">
-
-        </div>
-    </div>
-    <script type="text/javascript">
-        window.onload=initialize
-    </script>
+    </section>
+</main>
+<nav>
+    <a class="nav-button" href="#about"><i class="fa fa-info-circle"></i></a>
+    <a class="nav-button" href="#projects"><i class="fa fa-flask"></i></a>
+    <a class="nav-button" href="https://github.com/rliota"><i class="fa fa-github-square"></i></a>
+    <a class="nav-button" href="https://www.linkedin.com/in/robertliota"><i class="fa fa-linkedin-square"></i></a>
+    <a class="nav-button" href="https://twitter.com/robliota"><i class="fa fa-twitter-square"></i></a>
+</nav>
 </body>
 </html>
