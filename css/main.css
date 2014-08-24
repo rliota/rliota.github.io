@@ -40,7 +40,8 @@ h3 {
   font-size: 1.1em; }
 
 p {
-  margin: 0 0 16px 0; }
+  margin: 0 0 16px 0;
+  text-align: justify; }
 
 a {
   color: steelblue; }
