@@ -11,7 +11,8 @@
   color: #f65e45; }
 
 * {
-  font-family: 'Roboto', sans-serif; }
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px; }
 
 body {
   padding: 0;
@@ -84,13 +85,13 @@ main {
 nav {
   background-color: white;
   box-shadow: 0 0 5px 1px white;
+  padding: 0.25em 0;
   text-align: center;
-  height: 20vmin;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0; }
-  nav .nav-button {
+  nav .nav-button i {
     font-size: 15vmin; }
 
 .nav-button {
