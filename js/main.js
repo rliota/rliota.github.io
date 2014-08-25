@@ -70,6 +70,7 @@ function setNewActiveSection(sectionId){
     }
 
     var section = document.getElementById(sectionId);
+    scrollTo(0, section.offsetTop);
     addClass("active", section);
 }
 
