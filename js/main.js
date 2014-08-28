@@ -3,12 +3,12 @@
 function removeClass(cls, node){
     var replacer = new RegExp(cls, 'g');
     var oldClassName = node.className;
-    node.className = oldClassName ? oldClassName.replace(replacer, "") : null;
+    node.className = (oldClassName ? oldClassName.replace(replacer, "") : "").trim();
 }
 
 function addClass(cls, node){
     removeClass(cls, node);
-    node.className = [node.className, cls].join(" ");
+    node.className = [node.className||"", cls].join(" ").trim();
 }
 
 

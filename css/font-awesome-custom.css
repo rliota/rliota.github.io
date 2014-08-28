@@ -179,8 +179,8 @@
 .fa-list-ul:before {
   content: "\f0ca"; }
 
-.fa-arrow-circle-down:before {
-  content: "\f0ab"; }
+.fa-download:before {
+  content: "\f019"; }
 
 .fa-envelope:before {
   content: "\f0e0"; }

@@ -27,8 +27,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.2em 0 0.2em 0;
   margin: 0;
   color: steelblue; }
-  h1 :nth-child(1).fa, h2 :nth-child(1).fa, h3 :nth-child(1).fa, h4 :nth-child(1).fa, h5 :nth-child(1).fa, h6 :nth-child(1).fa {
-    padding-right: 0.3em; }
 
 h1 {
   font-size: 2.1em; }
@@ -95,7 +93,7 @@ nav {
   padding: 0 0.1em 0 0.1em; }
 
 .project-list {
-  margin: 0 0.7em;
+  margin: 0;
   padding: 0;
   list-style: none; }
 
