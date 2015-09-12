@@ -1,11 +1,8 @@
-input[type="checkbox"]{
-
+input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-
   overflow: hidden;
-
   text-align: center;
   vertical-align: middle;
   font-size: 2em;
@@ -14,61 +11,48 @@ input[type="checkbox"]{
   background-color: #ffffff;
   border: solid 1px #dddddd;
   margin: 0 0.2em;
-
   cursor: pointer;
-
-  &:first-child{
-    margin: 0 0.2em 0 0;
-  }
-  &:checked::after{
-    content: "\2713";
-    font-size: 0.8em;
-    position: relative;
-    bottom: 0.25em;
-    display: inline-block;
-    color: #000000;
-  }
 }
-
-
+input[type="checkbox"]:first-child {
+  margin: 0 0.2em 0 0;
+}
+input[type="checkbox"]:checked::after {
+  content: "\2713";
+  font-size: 0.8em;
+  position: relative;
+  bottom: 0.25em;
+  display: inline-block;
+  color: #000000;
+}
 input[type="checkbox"]:focus,
-label:focus input[type="checkbox"]{
+label:focus input[type="checkbox"] {
   outline: none;
 }
-
 /* X */
-input[type="checkbox"].x:checked::after{
+input[type="checkbox"].x:checked::after {
   content: "\2717";
 }
-
 /* pile of poo */
-input[type="checkbox"].rude:checked::after{
+input[type="checkbox"].rude:checked::after {
   content: "\1F4A9";
 }
-
 /* vulcan hand */
-input[type="checkbox"].prosperous:checked::after{
+input[type="checkbox"].prosperous:checked::after {
   content: "\1F596";
 }
-
 /* martini */
-input[type="checkbox"].martini:checked::after{
+input[type="checkbox"].martini:checked::after {
   content: "\1F378";
 }
-
 /* beer */
-input[type="checkbox"].beer:checked::after{
+input[type="checkbox"].beer:checked::after {
   content: "\1F37A";
 }
-
 /* American Flag */
-input[type="checkbox"].murica:checked::after{
+input[type="checkbox"].murica:checked::after {
   content: "\1F1FA\1F1F8";
 }
-
 /* There's some crazy stuff out there:
     http://unicode.org/emoji/charts/full-emoji-list.html
 
 */
-
-

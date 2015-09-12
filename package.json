@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 
-      "build-css": "lessc -x new/less/main.less > new/css/main.css"
+      "build-css": "lessc -x new/less/main.less > new/css/main.css && lessc new/less/css-only-checkbox.less > new/css/checkboxes.css"
   },
   "author": "Robert Liota",
   "license": "ISC",
