@@ -248,7 +248,10 @@ window.onload = function(){
 
 
     function logKeyPress(evt){
-        var key = evt.key;
+
+        //evt.key for firefox, evt.keyIdentifier for chrome, safari (webkit).
+        var key = evt.key || evt.keyIdentifier;
+        alert(evt.key+' : '+evt.keyIdentifier);
         if(key){
             switch (key){
                 case 'Enter':
@@ -273,7 +276,7 @@ window.onload = function(){
                     buffer.moveCaret(1);
                     break;
                 default:
-                    buffer.log(key);
+                    buffer.log(String.fromCharCode(evt.which || evt.keyCode));
             }
         }else{
             buffer.log(String.fromCharCode(evt.which || evt.keyCode));
