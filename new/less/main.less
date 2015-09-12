@@ -1,0 +1,148 @@
+@import "_color";
+
+*{
+  box-sizing: border-box;
+  color: @text-color;
+}
+
+html, body{
+  max-width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  max-width: 100%;
+  width: 52em;
+  margin: auto;
+}
+
+
+a{
+  color: @link-color;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+main{
+  display: table;
+  table-layout: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  > *{
+    display: table-row;
+    .content{
+      display: table-cell;
+      padding: 1em;
+    }
+  }
+  header{
+    * {
+      margin: 0;
+    }
+    .content{
+      vertical-align: middle;
+
+    }
+  }
+
+  article{
+    &.displayed{
+      display: table-row;
+    }
+
+    .content{
+      vertical-align: bottom;
+
+      font-family: sans-serif;
+      line-height: 1.4em;
+    }
+  }
+
+}
+
+
+.banner{
+  font-family: monospace;
+  text-align: right;
+  max-width: 100%;
+  margin: auto;
+  nav{
+    text-align: center;
+    a{
+      display: inline-block;
+      font-size: 18px;
+      margin: 0.5em 0;
+      padding: 0.5em 1em;
+    }
+  }
+
+
+  .face{
+    display: inline-block;
+    border: solid transparent 1px;
+    border-radius: 20%;
+    max-height: 250px;
+    height: 20vmin;
+    min-height: 75px;
+    float: right;
+    margin: 0 1em;
+  }
+}
+
+a.stealth{
+  color: @text-color;
+  display: inline;
+}
+
+a.stealth:hover{
+  text-decoration: none;
+}
+
+
+@media (max-width: 350px) {
+  .banner h2{
+    text-align: center;
+  }
+}
+
+footer{
+  text-align: center;
+
+  .links{
+    .icon{
+      border: transparent solid 1px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: inline-block;
+      img{
+        height: 64px;
+      }
+    }
+
+  }
+
+  .copyright-notice{
+    font-size: 0.66em;
+  }
+
+}
+
+
+.download-icon{
+  position: relative;
+  top: 0.3em;
+  color: @link-color;
+}
+
+
+@import "projects";

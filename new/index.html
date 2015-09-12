@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Robert Liota" />
+    <meta name="keywords" content="Robert,Liota,Robert Liota,Software,Software Engineer,Application Development,JavaScript,Web Developer,Programmer,Java,Web Application" />
+    <title>Robert Liota - Web and Software Developer</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="css/main.css"
+          rel="stylesheet">
+
+
+
+    <script type="application/javascript">
+        // We only want to hide articles if we can show them using the router.
+        // If JavaScript is disabled, the router won't be able to show them.
+        document.writeln("<style type='text/css'>main article{display: none;}</style>")
+    </script>
+
+
+
+</head>
+<body>
+
+
+    <main>
+
+
+        <article id="about">
+            <div class="content">
+                <p>
+                    Hello! My name is Robert Liota. I'm a New York-based web
+                    developer, currently working with <a href="https://www.teachforamerica.org">Teach For America</a>
+                    to help them build single-page applications.
+                </p>
+                <p>
+                    Prior to that, I helped deliver an automated case-clinician assignment system for the <a href="http://www.vnsny.org">largest
+                    home health care service in the United States of America</a>.
+                </p>
+                <p>
+                    I'm also a Jazz bassist, and currently learning the cello.
+                </p>
+
+            </div>
+        </article>
+        <article id="resume">
+            <div class="content">
+
+            </div>
+        </article>
+        <article id="contact">
+            <div class="content">
+
+            </div>
+        </article>
+
+
+        <header>
+            <div class="content">
+                <div class="banner">
+                    <a class="stealth" href="#/">
+                        <img class="face" src="img/rob-square.png">
+                        <h1>Robert Liota</h1>
+                        <h2>Web Developer</h2>
+                    </a>
+                    <nav>
+                        <a href="#about">about me</a>
+                        <a href="#projects">projects</a>
+                        <a href="#resume">resumé</a>
+                        <a href="#contact">contact me</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <article id="projects">
+            <div class="content">
+
+                <h2>Projects</h2>
+                <ul class="project-list">
+                    <li class="project">
+                        <h3>
+                            JSCompile
+                        </h3>
+                        <p>
+                            A tool to facilitate good JavaScript code organization practices in Java shops.
+                            (Getting a Java team to support Node.js in their build process to leverage Browserify
+                            is tough work.)
+                        </p>
+                        <p>
+                            Similar to Browserify, it helps package code modules (files) with dependency statements
+                            to other modules into a consolidated single JavaScript file. It differs from Browserify’s
+                            interface in that it recursively traverses a set of files under a specified root project
+                            directory, rather than dynamically by way of an entry file. I've been thinking of adding
+                            support for relative path dependency statements to the project, but haven’t had the time
+                            to do it yet.
+                        </p>
+                        <aside>
+                            <a href="https://github.com/rliota/JSCompile/archive/master.zip">
+                                <i class="material-icons download-icon" >file_download</i>Download
+                            </a>
+                            or
+                            <a href="https://github.com/rliota/JSCompile">
+                                <i class="material-icons download-icon" >code</i>Check it out on github</a>.
+                        </aside>
+                    </li>
+                    <li class="project">
+                        <h3>
+                            rlsh
+                        </h3>
+                        <p>
+                            A toy browser-based command line. It doesn't do much, but it was fun to build.
+                        </p>
+                        <aside>
+                            <a href="rlsh/">
+                                <i class="material-icons download-icon" >launch</i>try it</a>.
+                        </aside>
+                    </li>
+                    <li class="project">
+                        <h3>
+                            CSS-Only Checkboxes
+                        </h3>
+                        <p>
+                            <label><input type="checkbox" class="rude"> rude,</label>
+                        </p>
+                        <p>
+                            <label><input type="checkbox" class="murica"> patriotic,</label>
+                        </p>
+                        <p>
+                            <label><input type="checkbox" class="martini"> martini,</label>
+                            <label><input type="checkbox" class="beer"> beer,</label>
+                        </p>
+                        <p>
+                            <label><input type="checkbox" class="x"> x-mark,</label>
+                        </p>
+                        <p>
+                            <label><input type="checkbox"> normal,</label>
+                        </p>
+                        <p>
+                            <label><input type="checkbox" class="prosperous"> prosperous.</label>
+                        </p>
+                    </li>
+                </ul>
+
+            </div>
+        </article>
+
+    </main>
+    <footer>
+        <div class="links">
+            <a class="icon linkedin" href="https://www.linkedin.com/in/robertliota"><img src="img/linkedinIcon.png"></a>
+            <a class="icon" href="https://github.com/rliota"><img src="img/GitHub-Mark-120px-plus.png"></a>
+        </div>
+        <div class="copyright-notice">
+            © 2015 Robert Liota. All rights reserved. Blah blah blah.
+        </div>
+    </footer>
+
+    <script type="application/javascript" src="../js/router.js"></script>
+    <script type="application/javascript">
+        window.onload = function(){
+
+            function el(id){
+                return document.getElementById(id);
+            }
+
+            var about = el('about'),
+                projects = el('projects'),
+                resume = el('resume'),
+                contact = el('contact');
+
+            function getRouteLogic(element){
+                return {
+
+                    enter: function(){
+                        element.className = "displayed";
+                    },
+                    exit: function(){
+                        element.className = null;
+                    }
+                }
+            }
+
+            Router.defineRoute('/', {
+                enter: function(){}
+            });
+
+            Router.defineRoute('about', getRouteLogic(about));
+
+
+            Router.defineRoute('projects', getRouteLogic(projects));
+
+
+            Router.init();
+        }
+    </script>
+
+</body>
+</html>
