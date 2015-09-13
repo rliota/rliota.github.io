@@ -57,7 +57,7 @@
                 <p>
                     Hello! My name is Robert Liota. I'm a New York-based web
                     developer, currently working with <a href="https://www.teachforamerica.org">Teach For America</a>
-                    to help them build single-page applications.
+                    to help them build large single-page applications.
                 </p>
                 <p>
                     Prior to that, I helped deliver an automated case-clinician assignment system for the <a href="http://www.vnsny.org">largest
@@ -66,18 +66,6 @@
                 <p>
                     I'm also a Jazz bassist, and currently learning the cello.
                 </p>
-
-            </div>
-        </article>
-
-        <article id="resume">
-            <div class="content">
-
-            </div>
-        </article>
-
-        <article id="contact">
-            <div class="content">
 
             </div>
         </article>
@@ -132,6 +120,12 @@
                             CSS-Only Checkboxes
                         </h3>
                         <p>
+                            <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=605985">Firefox does not  support
+                            the appearance: none attribute</a> (or -moz-appearance) properly for checkboxes yet, so
+                            you can only have larger checkboxes on that browser (as you'll see below).
+                            Chrome and Safari can handle it though:
+                        </p>
+                        <p>
                             <label><input type="checkbox" class="rude"> rude,</label>
                         </p>
                         <p>
@@ -164,6 +158,18 @@
             </div>
         </article>
 
+
+        <article id="resume">
+            <div class="content">
+                In Progress... Check back later!
+            </div>
+        </article>
+
+        <article id="contact">
+            <div class="content">
+                <a href="mailto:robertliota.public@gmail.com">robertliota.public@gmail.com</a>
+            </div>
+        </article>
     </main>
     <footer>
         <div class="links">
@@ -171,6 +177,7 @@
             <a class="icon" href="https://github.com/rliota"><img src="img/GitHub-Mark-120px-plus.png"></a>
         </div>
         <div class="copyright-notice">
+            Except for LinkedIn's "in" logo and Github's Octocat, <br/>
             © 2015 Robert Liota. All rights reserved. Blah blah blah.
         </div>
     </footer>
@@ -205,9 +212,11 @@
             });
 
             Router.defineRoute('about', getRouteLogic(about));
-
-
             Router.defineRoute('projects', getRouteLogic(projects));
+            Router.defineRoute('resume', getRouteLogic(resume));
+            Router.defineRoute('contact', getRouteLogic(contact));
+
+
 
 
             Router.init();
