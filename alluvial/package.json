@@ -1,0 +1,15 @@
+{
+  "name": "sankey-diagram",
+  "version": "1.0.0",
+  "description": "A sankey diagram built with d3 and based on the example by Mike Bostock @ http://bost.ocks.org/mike/sankey/",
+  "main": "style-sankey-streams.js",
+  "dependencies": {
+    "d3": "^3.5.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert Liota",
+  "license": "MIT"
+}

@@ -63,7 +63,6 @@
                     Prior to that, I helped deliver an automated case-clinician assignment system for the <a href="http://www.vnsny.org">largest
                     non-profit home health care service in the United States of America</a>.
                 </p>
-
             </div>
         </article>
 
@@ -74,42 +73,36 @@
                 <ul class="project-list">
                     <li class="project">
                         <h3>
-                            JSCompile
-                        </h3>
-                        <p>
-                            A tool to facilitate good JavaScript code organization practices in Java shops.
-                            (Getting a Java team to support Node.js in their build process to leverage Browserify
-                            is tough work.)
-                        </p>
-                        <p>
-                            Similar to Browserify, it helps package code modules (files) with dependency statements
-                            to other modules into a consolidated single JavaScript file. It differs from Browserify’s
-                            interface in that it recursively traverses a set of files under a specified root project
-                            directory, rather than dynamically by way of an entry file. I've been thinking of adding
-                            support for relative path dependency statements to the project, but haven’t had the time
-                            to do it yet.
-                        </p>
-                        <aside>
-                            <a href="https://github.com/rliota/JSCompile/archive/master.zip">
-                                <i class="material-icons download-icon" >file_download</i>Download
-                            </a>
-                            or
-                            <a href="https://github.com/rliota/JSCompile">
-                                <i class="material-icons download-icon" >code</i>Check it out on github</a>.
-                        </aside>
-                    </li>
-                    <li class="project">
-                        <h3>
                             rlsh
                         </h3>
                         <p>
                             A toy browser-based command line. It doesn't do much, but it was fun to build. Sometimes
-                            it doesn't do <em>anything</em> because it relies on <a href="http://unixpapa.com/js/key.html">the
-                            most insane and un-standardized portion of the browser API</a>.
+                            it won't do <em>anything</em> because it relies on an API that is at the heart of an
+                            <a href="http://unixpapa.com/js/key.html">interoperability hell</a>.
                         </p>
                         <aside>
-                            <a href="rlsh/">
-                                <i class="material-icons download-icon" >launch</i>try it</a>.
+                            <a href="rlsh/">try it</a>.
+                        </aside>
+                    </li>
+                    <li class="project">
+                        <h3>
+                            JSCompile
+                        </h3>
+                        <p>
+                            I wrote this JavaScript file dependency/mapper/resolver/concatenator tool before I knew what
+                            Browserify was.
+                            It works very well, and will even complain if it finds a circular dependency in your code.
+                        </p>
+                        <p> It differs from Browserify’s
+                            usage in that it recursively traverses a set of files under a specified root project
+                            directory, rather than dynamically by way of an entry file.
+                        </p>
+                        <aside>
+                            <a href="https://github.com/rliota/JSCompile/archive/master.zip">
+                                Download</a>,
+                            or
+                            <a href="https://github.com/rliota/JSCompile">
+                                Check it out on github</a>.
                         </aside>
                     </li>
                     <li class="project">
@@ -123,30 +116,23 @@
                             Chrome and Safari can handle it though:
                         </p>
                         <p>
-                            <label><input type="checkbox" class="rude"> rude,</label>
-                        </p>
-                        <p>
-                            <label><input type="checkbox" class="murica"> patriotic,</label>
-                        </p>
-                        <p>
-                            <label><input type="checkbox" class="martini"> martini,</label>
-                            <label><input type="checkbox" class="beer"> beer,</label>
+                            <label><input type="checkbox"> normal,</label>
                         </p>
                         <p>
                             <label><input type="checkbox" class="x"> x-mark,</label>
                         </p>
                         <p>
-                            <label><input type="checkbox"> normal,</label>
+                            <label><input type="checkbox" class="rude"> rude,</label>
                         </p>
                         <p>
                             <label><input type="checkbox" class="prosperous"> prosperous.</label>
                         </p>
                         <aside>
                             <a href="less/css-only-checkbox.less" download>
-                                <i class="material-icons download-icon" >file_download</i>get the .less file
-                            </a>
+                                get the .less file
+                            </a> /
                             <a href="css/checkboxes.css">
-                                <i class="material-icons download-icon" download>file_download</i>get the .css file
+                                get the .css file
                             </a>
                         </aside>
                     </li>
@@ -158,7 +144,85 @@
 
         <article id="resume">
             <div class="content">
-                In Progress... Check back later!
+
+
+                <h2>Background Info</h2>
+                I’ve lead the technical implementation of five single-page application clients for Teach For America
+                in the past two years; the front ends for a custom ldap administration tool, a hiring fair schedule organizer,
+                a candidate screening application, a teacher metric tracking application, and a corps member retention management tool.
+
+                Prior to that, I helped deliver an automated case-clinician assignment system for the largest non-profit
+                home health care service in the United States of America.
+
+                <h3>Some Things I’ve Worked With</h3>
+                JavaScript, CSS, HTML, Java, Groovy, PHP, XML, MySQL, DB2, Linux, OSX, Windows, git, GitHub, Gradle, Node.js, NPM, D3,
+                Backbone.js, Karma, Jasmine, Mocha, Selenium Web Driver, PhantomJS, Browserify, brfs, UglifyJS, Angular.
+
+                <h2>Professional Experience</h2>
+                <h3>Teach For America</h3>
+                <aside>January 2014 - Present</aside>
+                <ul>
+                    <li>
+                        Led multiple development process initiatives:
+                        <ul>
+                            <li>Private in-house NPM repository to encourage better code reuse.</li>
+                            <li>Use of NPM + Karma, Mocha/Jasmine + Browserify for building, testing,
+                                and continuously deploying client-side resources.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Built proof of concept mobile application with Ionic(AngularJS+Hammer.js+Cordova) that talked to an elastic
+                        search service via kibana.
+                    </li>
+                    <li>Helped design project structure for multi-language application. (NPM and Gradle were used together to drive
+                        front- and back-end builds separately, bundling the assembled front end resources in the back-end project.
+                    </li>
+                    <li>
+                        Set up front-end projects to work with automated tests in a CI suite. (Jenkins)
+                    </li>
+                    <li>
+                        Led small teams of 2-3 front end developers in the implementation of four separate single-page application clients:
+                        <ul>
+                            <li>Laid foundational code (Backbone.js Routers, application boot script).</li>
+                            <li>Analyzed use cases to develop accurate model for the application’s data and view layers.</li>
+                            <li>Coordinated closely with back end leads to design our data integration layers.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Code surgery. (Componentized the important bits of a retention management tool.)
+                    </li>
+                </ul>
+
+                <h3>The Visiting Nurse Service of New York</h3>
+                <aside>August 2011 - January 2014</aside>
+                <ul>
+                    <li>
+                        Contributed to the design and development of a case assignment suggestion system that matches clinicians
+                        with patients based on various clinical, spatial, and personnel data.
+                    </li>
+                    <li>
+                        Refactored a sql query that ran for around 13 seconds to get it to run in about 1.
+                    </li>
+                    <li>
+                        Designed and developed a prototype GIS interface leveraging Google Maps API and US Census Bureau .kml data
+                        for care delivery management. (Subsequently, there was kml data transforming via Groovy involved as well.)
+                    </li>
+
+                    <li>
+                        Designed, and analyzed the feasibility of developing, a JavaScript based drag and drop scheduling interface
+                        for clinical staff.
+                    </li>
+                    <li>
+                        Enhanced/maintained various in-house developed applications (Java, DB2 w/ CSS, JavaScript and .jsp/JSTL in
+                        front), including a call tracking system and a clinical management system.
+                    </li>
+
+                    <li>
+                        Wrote a browser-error logging mechanism and service to help identify client-side issues in live, production
+                        web applications.
+                    </li>
+                </ul>
+
             </div>
         </article>
 
