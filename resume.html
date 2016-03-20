@@ -96,14 +96,14 @@
         </li>
     </ul>
 
-    <h2>Stuff You Can See</h2>
+    <h2>Side Projects</h2>
 
     <h3><a href="https://github.com/rliota/JSCompile">JSCompile</a> (https://github.com/rliota/JSCompile)</h3>
 
     <p>JSCompile is JavaScript module dependency/mapper/resolver/concatenator tool I wrote before I knew what Browserify was. It works very well, and will even complain if it finds a circular dependency in your code.
     </p>
 
-    <p>It differs from Browserify's usage in that it recursively traverses a set of files under a specified root project directory, rather than dynamically by way of an entry file. Each file is wrapped in an immediately invoked function that returns a variable that matches the name of the file. (So the exported object in this case must be defined as a local variable within the file.) The returned object is assigned to a namespaced object (following the file directory structure of the workspace.) This is all done after import statements have been scanned for module dependencies, and the modules are ordered so as to accommodate those dependencies.
+    <p>It differs from Browserify in that it does not work with CommonJS. It recursively traverses a set of files under a specified root project directory, rather than dynamically by way of an entry file. Each file is wrapped in an immediately invoked function that returns a variable that matches the name of the file. (So the exported object in this case must be defined as a local variable within the file.) The returned object is assigned to a namespaced object (following the file directory structure of the workspace.) This is all done after import statements have been scanned for module dependencies, and the modules are ordered so as to accommodate those dependencies.
     </p>
 
     <p>Rather than using a CommonJS require() pattern to pull in modules, it scans for @import annotations in comments. If the imported object namespace is found within the reference object assembled above, it is injected into the importing file's IIFE wrapper as an argument named the same as it's exported variable.
