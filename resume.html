@@ -14,97 +14,108 @@
 
     <body>
 
-        <h2>Background Info</h2>
-        I’ve lead the technical implementation of five single-page application clients for Teach For America
-        in the past two years; the front ends for a custom ldap administration tool, a hiring fair schedule organizer,
-        a candidate screening application, a teacher metric tracking application, and a corps member retention management tool.
 
-        Prior to that, I helped deliver an automated case-clinician assignment system for the largest non-profit
-        home health care service in the United States of America.
+    <h2>Summary</h2>
 
-        <h3>Some Things I’ve Worked With</h3>
-        JavaScript, CSS, HTML, Java, Groovy, PHP, XML, MySQL, DB2, Linux, OSX, Windows, git, GitHub, Gradle, Node.js, NPM, D3,
-        Backbone.js, Karma, Jasmine, Mocha, Selenium Web Driver, PhantomJS, Browserify, brfs, UglifyJS, Angular.
+    <p>
+        Full stack (emphasis Front End) web application engineer with ~5 years experience designing and building single page web application clients and UI components in JavaScript, and back-end development in Java, Groovy/Grails with DB2.
+    </p>
 
-        <h2>Professional Experience</h2>
-        <h3>Teach For America</h3>
-        <aside>January 2014 - Present</aside>
-        <ul>
-            <li>
-                Led multiple development process initiatives:
-                <ul>
-                    <li>Private in-house NPM repository to encourage better code reuse.</li>
-                    <li>Use of NPM + Karma, Mocha/Jasmine + Browserify for building, testing,
-                        and continuously deploying client-side resources.</li>
-                </ul>
-            </li>
-            <li>
-                Built proof of concept mobile application with Ionic(AngularJS+Hammer.js+Cordova) that talked to an elastic
-                search service via kibana.
-            </li>
-            <li>Helped design project structure for multi-language application. (NPM and Gradle were used together to drive
-                front- and back-end builds separately, bundling the assembled front end resources in the back-end project.
-            </li>
-            <li>
-                Set up front-end projects to work with automated tests in a CI suite. (Jenkins)
-            </li>
-            <li>
-                Led small teams of 2-3 front end developers in the implementation of four separate single-page application clients:
-                <ul>
-                    <li>Laid foundational code (Backbone.js Routers, application boot script).</li>
-                    <li>Analyzed use cases to develop accurate model for the application’s data and view layers.</li>
-                    <li>Coordinated closely with back end leads to design our data integration layers.</li>
-                </ul>
-            </li>
-            <li>
-                Code surgery. (Componentized the important bits of a retention management tool.)
-            </li>
-        </ul>
+    <p>
+        I've lead the technical implementation of more than four single-page applications for Teach For America in the past two years with a focus on responsive interfaces. Prior to that, I helped deliver and optimize the performance of an automated case-clinician assignment system for the largest nonprofit home health care service in the United States of America (all 5 boroughs of NYC + upstate New York).
+    </p>
 
-        <h3>The Visiting Nurse Service of New York</h3>
-        <aside>August 2011 - January 2014</aside>
-        <ul>
-            <li>
-                Contributed to the design and development of a case assignment suggestion system that matches clinicians
-                with patients based on various clinical, spatial, and personnel data.
-            </li>
-            <li>
-                Refactored a sql query that ran for around 13 seconds to get it to run in about 1.
-            </li>
-            <li>
-                Designed and developed a prototype GIS interface leveraging Google Maps API and US Census Bureau .kml data
-                for care delivery management. (Subsequently, there was kml data transforming via Groovy involved as well.)
-            </li>
+    <h3>Things I've Worked With</h3>
 
-            <li>
-                Designed, and analyzed the feasibility of developing, a JavaScript based drag and drop scheduling interface
-                for clinical staff.
-            </li>
-            <li>
-                Enhanced/maintained various in-house developed applications (Java, DB2 w/ CSS, JavaScript and .jsp/JSTL in
-                front), including a call tracking system and a clinical management system.
-            </li>
+    <p>
+        JavaScript, CSS, HTML, AJAX, JSON, XML, Java, Groovy/Grails, MySQL, DB2, Linux, OSX, Windows, git, Gradle, Node.js, NPM, D3.js,
+        Backbone.js, Angular JS, Karma, Jasmine, Mocha, PhantomJS, Browserify, UglifyJS.
+    </p>
 
-            <li>
-                Wrote a browser-error logging mechanism and service to help identify client-side issues in live, production
-                web applications.
-            </li>
-        </ul>
 
-        <h2>Stuff You Can See</h2>
-        <h3><a href="https://github.com/rliota/JSCompile/">JSCompile</a></h3>
-        <p>I wrote this JavaScript file dependency/mapper/resolver/concatenator tool before I knew what Browserify was.
-            It works very well, and will even complain if it finds a circular dependency in your code.</p>
-        <h3><a href="https://github.com/rliota/ScheduleGrid/">Schedule Grid</a></h3>
-        <p>
-            This is the Backbone widget I built for Teach For America's Hiring Fair application. It actually maps
-            schedule items to a position on a table based on the time they take place.
-        </p>
-        <p>
-            You can set it up to create schedule items, but at Teach For America, the items were generated automatically on
-            the backend.
-        </p>
+    <h3>Skills</h3>
 
+    <p>
+        OOP (object-oriented programming), functional programming, performance optimization, user interface design and development, browser application client architecture, data visualization, gis visualization, TDD (test-driven development).
+    </p>
+
+
+    <h2>Professional Experience</h2>
+
+    <h3>Teach For America</h3>
+    <aside>January 2014 - Present</aside>
+    <ul>
+        <li> Introduced Front-End unit/integration testing to the development workflow.
+        </li>
+        <li> Introduced general JavaScript dependency management and build processes for UI components and single page application clients leveraging Node.js and NPM.
+        </li>
+        <li> Provided our DevOps team with a strategy for integrating JavaScript tests within Java applications for our continuous integration manager, Jenkins, using Karma combined with a JUnit reporter plugin.
+        </li>
+        <li>
+            Led an initiative to establish a private NPM repository for internal TFA UI components (using Sinopia).
+        </li>
+        <li> Experimented with remote device testing with Karma and Selenium Web Driver.
+        </li>
+        <li> Mentored Back End and Front End developers in JavaScript fundamentals/best practices.
+        </li>
+        <li> Identified performance bottlenecks in Front End code using a combination of Google Chrome dev tools and the window.performance API and reduced/eliminated them through careful application of window.requestAnimationFrame / window.setTimeout calls.
+        </li>
+        <li> Led data layer architecture on the Front End (Backbone.js Collection/Model design)
+        </li>
+        <li> Worked closely with UX Specialists to identify, prioritize and help advocate for important features.
+        </li>
+        <li> Frequently collaborated with UX specialists to identify UI patterns and technical trajectory of applications (what the designers wanted to build, and how to support that technically.)
+        </li>
+        <li> Developed various data visualization POCs for corps member data visualization using D3 (geographic dispersal, custom reporting, etc.)
+        </li>
+        <li>
+            Built proof of concept mobile application with Ionic (a multi-platform framework that uses Angular JS+Hammer.js+Cordova) that talked to an elastic
+            search service via Kibana.
+        </li>
+        <li>
+            Componentized important modules from an application that was being retired.
+        </li>
+    </ul>
+
+    <h3>The Visiting Nurse Service of New York</h3>
+    <aside>August 2011 - January 2014</aside>
+    <ul>
+        <li> Contributed to the design and development of a case assignment suggestion system that matches clinicians with patients based on various clinical, spatial, and personnel data across all 5 boroughs of NYC and Upstate New York.
+        </li>
+        <li> Optimized a long running sql query for a case assignment system (reduced from ~13 seconds to ~1).
+        </li>
+        <li> Designed and developed a prototype GIS interface leveraging Google Maps API and US Census Bureau .kml data for care delivery management. (Subsequently, there was kml data transforming via Groovy involved as well.)
+        </li>
+        <li> Designed the interface for, and investigated the feasibility of developing, a drag and drop scheduling interface for clinical staff.
+        </li>
+        <li> Enhanced/maintained various in-house developed applications (Java, DB2 w/ CSS, JavaScript and .jsp/JSTL in front), including a call tracking system and a clinical management system.
+        </li>
+        <li> Wrote a browser-error logging mechanism and service to help identify client-side issues in live, production web applications.
+        </li>
+        <li> Built a single page web application client using ExtJS 3
+        </li>
+    </ul>
+
+    <h2>Stuff You Can See</h2>
+
+    <h3><a href="https://github.com/rliota/JSCompile">JSCompile</a> (https://github.com/rliota/JSCompile)</h3>
+
+    <p>JSCompile is JavaScript module dependency/mapper/resolver/concatenator tool I wrote before I knew what Browserify was. It works very well, and will even complain if it finds a circular dependency in your code.
+    </p>
+
+    <p>It differs from Browserify's usage in that it recursively traverses a set of files under a specified root project directory, rather than dynamically by way of an entry file. Each file is wrapped in an immediately invoked function that returns a variable that matches the name of the file. (So the exported object in this case must be defined as a local variable within the file.) The returned object is assigned to a namespaced object (following the file directory structure of the workspace.) This is all done after import statements have been scanned for module dependencies, and the modules are ordered so as to accommodate those dependencies.
+    </p>
+
+    <p>Rather than using a CommonJS require() pattern to pull in modules, it scans for @import annotations in comments. If the imported object namespace is found within the reference object assembled above, it is injected into the importing file's IIFE wrapper as an argument named the same as it's exported variable.
+    </p>
+
+    <h2>Education</h2>
+    <h3>Hampshire College</h3>
+    <p>
+        Bachelor of Arts, 2007-2011
+        <br/>
+        Music, minor in Computer Science
+    </p>
     </body>
 
 </html>
